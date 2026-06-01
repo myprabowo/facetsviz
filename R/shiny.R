@@ -251,7 +251,7 @@ build_facets_app <- function() {
                 shiny::div(
                   style = "text-align: left;",
                   shiny::tags$h1("facetsviz", style = "font-weight: bold; margin-top: 0; margin-bottom: 5px; font-size: 3rem;"),
-                  shiny::tags$h3("Version 0.1.0", style = "color: #666; margin-top: 0; margin-bottom: 10px; font-weight: normal;"),
+                  shiny::tags$h3("Version 0.1.1", style = "color: #666; margin-top: 0; margin-bottom: 10px; font-weight: normal;"),
                   shiny::tags$p("\u00A9 2026 Muhammad Yoga Prabowo", style = "font-size: 1.2rem; margin-bottom: 0;")
                 )
               ),

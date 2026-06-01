@@ -1,7 +1,7 @@
 Package: facetsviz
 Type: Package
 Title: Parse and Visualize FACETS Output Files
-Version: 0.1.0
+Version: 0.1.1
 Authors@R:
     person(given = c("Muhammad", "Yoga"), family = "Prabowo", email = "muhammadyogaprabowo@gmail.com", role = c("aut", "cre"))
 Author: Muhammad Yoga Prabowo [aut, cre]

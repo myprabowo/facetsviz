@@ -27,7 +27,7 @@ plot_wright(facets)
 
 ``` r
 # Install from local source
-install.packages("facetsviz_0.1.0.tar.gz", repos = NULL, type = "source")
+install.packages("facetsviz_0.1.1.tar.gz", repos = NULL, type = "source")
 
 # Or using devtools from GitHub
 devtools::install_github("myprabowo/facetsviz")
