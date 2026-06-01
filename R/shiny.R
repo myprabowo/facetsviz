@@ -162,16 +162,38 @@ build_facets_app <- function() {
     theme <- bslib::bs_theme(version = 5, bootswatch = "flatly")
   }
 
+  logo_path <- system.file("www", "logo.png", package = "facetsviz")
+  has_logo <- nzchar(logo_path) && file.exists(logo_path)
+  if (has_logo) {
+    shiny::addResourcePath("facetsviz_www", system.file("www", package = "facetsviz"))
+  }
+
   ui <- shiny::fluidPage(
     theme = theme,
     shiny::tags$head(
       shiny::tags$style(
-        shiny::HTML(
-          ".facetsviz-download { margin-bottom: 10px; }\n.facetsviz-download > .btn { display: block; width: 100%; }"
-        )
+        shiny::HTML(paste0(
+          ".facetsviz-download { margin-bottom: 10px; }",
+          ".facetsviz-download > .btn { display: block; width: 100%; }",
+          ".facetsviz-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #dee2e6; }",
+          ".facetsviz-header img { height: 54px; width: auto; }",
+          ".facetsviz-header h2 { margin: 0; font-size: 1.6rem; font-weight: 600; color: #1a2e4a; }",
+          ".facetsviz-header small { display: block; font-size: 0.8rem; color: #6c757d; font-weight: 400; margin-top: 2px; }"
+        ))
       )
     ),
-    shiny::titlePanel("facetsviz: FACETS Output Explorer"),
+    if (has_logo) {
+      shiny::div(
+        class = "facetsviz-header",
+        shiny::tags$img(src = "facetsviz_www/logo.png", alt = "facetsviz logo"),
+        shiny::tags$div(
+          shiny::tags$h2("facetsviz"),
+          shiny::tags$small("FACETS Output Explorer")
+        )
+      )
+    } else {
+      shiny::titlePanel("facetsviz: FACETS Output Explorer")
+    },
     shiny::sidebarLayout(
       shiny::sidebarPanel(
         shiny::fileInput("out_file", "Upload FACETS output file (.out or .txt)", accept = c(".out", ".txt")),

@@ -1,4 +1,6 @@
 
+<img src="man/figures/logo.png" align="right" height="140" alt="facetsviz logo" />
+
 # facetsviz
 
 ## Overview
