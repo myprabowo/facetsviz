@@ -1,0 +1,26 @@
+Title = Sample FACETS Output
+Facets = 3
+Model = ?,?,?,R5
+
+Table 7.1.1  Student Measurement Report  (arranged by mN).
+|   100      20      5.00   4.99 |(  7.04  1.86)|Maximum               |      |   .00   .00 | 68 Student068       | in subset: 16
+|    99      20      4.95   4.92 |   4.89  1.02 | 1.10   .4  4.58  2.0 |  .78 |  -.44   .15 | 57 Student057       | in subset: 13
+
+Table 7.2.1  Rater Measurement Report  (arranged by mN).
+|    51      25      2.04   2.30 |   3.77   .25 | 1.68  2.5  1.74  2.6 | -.22 |  -.11   .26 | 70 Rater070         | in subset: 17
+|    59      20      2.95   3.21 |   2.38   .28 | 1.72  2.0  1.81  2.2 | -.01 |   .79   .46 | 18 Rater018         | in subset: 4
+
+Table 7.3.1  Criterion Measurement Report  (arranged by mN).
+|  1443     330      4.37   4.30 |    .27   .10 | 1.02   .2   .90  -.6 |  .98 |   .72   .71 | 4 Emphasising high standards |
+|  1450     330      4.39   4.34 |    .20   .10 |  .86 -1.4   .82 -1.2 | 1.16 |   .72   .70 | 2 KSA                        |
+
+Table 8.1  Category Statistics.
+|  1      12        12    1%   1%| -1.53  -1.22   .6 |             |( -3.31)       |   low  |   low    |100%|      -.1          |
+|  2      39        39    3%   4%|  -.20   -.32  1.1 | -2.01    .33|  -1.66   -2.56|  -2.01 |  -2.29   | 43%|      -.2      .00 |
+|  3     169       169   14%  18%|   .95    .99   .9 | -1.12    .18|   -.16    -.92|  -1.12 |  -1.00   | 52%|      -.4      .00 |
+|  4     413       413   34%  52%|  2.11   2.08  1.1 |   .65    .10|   1.63     .69|    .65 |    .65   | 55%|      -.1      .00 |
+|  5    1017       577   48% 100%|  3.73   3.74  1.1 |  2.48    .07|(  3.67)   2.79|   2.48 |   2.61   |100%|       .8      .00 |
+
+Table 4.1 Unexpected Responses (2 residuals sorted by u).
+|  4     4     5.0  -1.0 -9.0 | 57 Student057 57 Rater057 3 Commitment                 | 1283
+|  4     4     1.8   2.2  2.9 | 70 Student070 70 Rater070 4 Emphasising high standards | 1529

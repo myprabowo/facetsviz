@@ -1,0 +1,27 @@
+template:
+  bootstrap: 5
+
+home:
+  title: facetsviz
+
+reference:
+  - title: Parsing
+    contents:
+      - read_facets_out
+  - title: Plotting
+    contents:
+      - facets_theme
+      - plot_wright_map
+      - plot_student_fairness
+      - plot_rater_severity
+      - plot_criterion_difficulty
+      - plot_category_usage
+      - plot_probability_curves
+      - plot_expected_score_ogive
+      - plot_scale_structure
+      - plot_unexpected_responses
+  - title: Rendering and app
+    contents:
+      - render_facets_plots
+      - render_facets_batch
+      - run_facets_app

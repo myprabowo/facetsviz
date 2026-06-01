@@ -1,0 +1,352 @@
+Facets 64-bit (Many-Facet Rasch Measurement) 4.1.8 Copyright (c) 1987-2024, John M. Linacre. All rights reserved.
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 1. Specifications from file " ".
+
+Title = American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Data file = ( )
+Output file =
+
+; Data specification
+Facets = 3
+Entered-in-data =2,1,1
+Delements = N
+Non-centered = ; inactive
+Positive = 1
+Labels =
+1,Teams ; (elements = 8)
+2,Games played, A  ; (elements = 3)
+Model = 22,?,-?,B22,0.5
+21,?,-?,B21,0.5
+23,?,-?,B23,0.5
+
+; Output description
+Arrange tables in order = mN,N
+Bias/Interaction direction = plus ; ability, easiness, leniency : higher score = positive logit
+Fair score = Mean
+Pt-biserial = Measure
+Heading lines in output data files = Y
+Barchart = Yes
+Total score for elements = Yes
+T3onscreen show only one line on screen iteration report = Y
+T4MAX maximum number of unexpected observations reported in Table 4 = 100
+T7LGS show table 7 element list, group details, group summary = LGS
+T8NBC show table 8 numbers-barcharts-curves = NBC
+Unexpected observations reported if standardized residual >= 2
+Usort unexpected observations sort order = u
+WHexact - Wilson-Hilferty standardization = Y
+
+; Convergence control
+Convergence = 0.5, 0.01, 0, 0
+Iterations (maximum) = 0 ; unlimited
+Xtreme scores adjusted by = 0.3, 0.5  ;(estimation, bias)
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 2. Data Summary Report.
+
+Assigning models to Data= "C:\Facets\examples\Baseball.txt"
+Total lines in data file = 18
+Total data lines = 16
+Responses matched to model: 22,?,-?,B22,0.5 = 50
+Responses matched to model: 21,?,-?,B21,0.5 = 4
+Responses matched to model: 23,?,-?,B23,0.5 = 2
+    Total non-blank responses found = 56
+              Number of blank lines = 2 first at or near line 42
+Valid responses used for estimation = 56
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 3. Iteration Report.
+
++-----------------------------------------------------------+
+| Iteration      Max. Score Residual      Max. Logit Change |
+|             Elements    %  Categories   Elements    Steps |
+|-----------------------------------------------------------|
+| PROX   1                                  -.6783          |
+| JMLE   2      2.3945   1.6      .0000      .0352    .0000 |
+Warning (7) Over-constrained?  Noncenter= not in effect
+
+| JMLE   3      1.1690    .8      .0000      .0171    .0000 |
+| JMLE   4       .5652    .4      .0000      .0082    .0000 |
+| JMLE   5       .2721    .2      .0000      .0040    .0000 |
++-----------------------------------------------------------+
+Subset connection O.K.
+
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 4. Unexpected Responses - appears after Table 8.
+
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 5. Measurable Data Summary.
+
++--------------------------------------------------+
+| Cat  Score  Exp.  Resd StRes|                    |
+|-----------------------------+--------------------|
+|10.98 10.98 10.98   .00  .00 | Mean (Weighted: 28)|
+| 3.66  3.66  3.30  1.59  .71 | S.D. (Population)  |
+| 3.73  3.73  3.37  1.62  .72 | S.D. (Sample)      |
++--------------------------------------------------+
+Estimable observations = 28, Free parameters = -1, Degrees of freedom = 27
+Global Pearson chi-squared = 13.92, probability = .9820
+
+                                         Count   Mean   S.D.
+Responses non-extreme estimable    =        56  10.98   3.66
+Count of measurable responses (wtd)=       28.000
+Raw-score variance of observations   = 13.410 100.00%
+Variance explained by Rasch measures = 10.882  81.15%
+Variance of residuals                =  2.529  18.85%
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 6.0  All Facet Vertical "Rulers".
+
+Vertical = (1A,S) Yardstick (columns lines low high extreme)= 0,10,-1,1,End
++----------------------------------------------------+
+|Measr|+Teams                      | S.1 | S.2 | S.3 |
+|-----+----------------------------+-----+-----+-----|
+|   1 +                            +(21) +(22) +(23) |
+|     |                            | 15  | --- | --- |
+|     |                            | --- | 15  | 16  |
+|     |                            | 14  | --- | --- |
+|     |                            | --- | 14  | 15  |
+|     | Cleveland                  | 13  | --- | --- |
+|     | Boston        New York     | --- | 13  | 14  |
+|     |                            | 12  | --- | 13  |
+|     | Philadelphia               | --- | 12  | --- |
+|     |                            | 11  | --- | 12  |
+*   0 * Detroit                    * --- * 11  * --- *
+|     |                            | 10  | --- | 11  |
+|     |                            | --- | 10  | --- |
+|     |                            |  9  | --- | 10  |
+|     | Saint Louis                | --- |  9  |  9  |
+|     | Washington                 |  8  | --- | --- |
+|     | Chicago                    | --- |  8  |  8  |
+|     |                            |  7  | --- | --- |
+|     |                            | --- |  7  |  7  |
+|     |                            |  6  | --- | --- |
+|  -1 +                            + (0) + (0) + (0) |
+|-----+----------------------------+-----+-----+-----|
+|Measr|+Teams                      | S.1 | S.2 | S.3 |
++----------------------------------------------------+
+Facet omitted because all elements have the same measure. Use Vertical= to force display: 2
+
+S.1: Model = 21,?,-?,B21  ; Games played: 21 games
+S.2: Model = 22,?,-?,B22  ; Games played: 22 games
+S.3: Model = 23,?,-?,B23  ; Games played: 23 games
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 6.1  Teams Facet Summary.
+
+Logit:
+                1    1  1                 1     1        1 11
+ +-----Q----------------S----------------M----------------S----------------Q-----+
+-1                                       0                                       1
+
+Infit MnSq:
+                         2  1         2  1                        1 1
+ +-------Q---------------S---------------M---------------S---------------Q-------+
+ 0                                                                               1
+
+Outfit MnSq:
+                        1 11        1 1   1                      1  1
+ +-------Q---------------S---------------M---------------S---------------Q-------+
+ 0                                                                               1
+
+Infit ZStd:
+             2     1                11   1                               1 1
+ +-------------S----------------------M--+-------------------S-------------------+
+-2                                      -1                                       0
+
+Outfit ZStd:
+           1  1 1                1  1     1                            1   1
+ +------------S----------------------M---+-------------------S-------------------+
+-2                                      -1                                       0
+
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 6.2  Games played Facet Summary.
+
+Logit:
+                                         3
+ +---------------------------------------M---------------------------------------+
+-1                                       0                                       1
+
+Infit MnSq:
+   1                    1                    1
+ +-----S----------------M----------------S----------------Q----------------------+
+ 0                                                                               1
+
+Outfit MnSq:
+   1                    1                   1
+ +-----S---------------M----------------S----------------Q-----------------------+
+ 0                                                                               1
+
+Infit ZStd:
+      1                              1              1
+ +-----------S------------------M--------+---------S------------------Q----------+
+-2                                      -1                                       0
+
+Outfit ZStd:
+   1                                 1              1
+ +--------S--------------------M---------+---------S--------------------Q--------+
+-2                                      -1                                       0
+
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 7.1.1  Teams Measurement Report  (arranged by mN).
+
++-----------------------------------------------------------------------------------------------------------------+
+|  Weightd Weightd Obsvd  Fair(M)|   +    Model | Infit      Outfit    |Estim.| Correlation |                     |
+|  Score   Count  Average Average|Measure  S.E. | MnSq ZStd  MnSq ZStd |Discrm| PtMea PtExp | N Teams             |
+|--------------------------------+--------------+----------------------+------+-------------+---------------------|
+|    97       7     13.86  13.65 |    .47   .17 |  .46 -1.1   .44 -1.1 | 1.55 |   .90   .88 | 1 Cleveland         |
+|    96       7     13.71  13.52 |    .45   .17 |  .50  -.9   .51  -.9 | 1.47 |   .88   .87 | 2 Boston            |
+|    94       7     13.43  13.24 |    .41   .17 |  .34 -1.5   .32 -1.6 | 1.72 |   .94   .86 | 3 New York          |
+|    84       7     12.00  11.93 |    .17   .17 |  .84  -.1   .84  -.1 | 1.17 |   .88   .80 | 4 Philadelphia      |
+|    78       7     11.14  11.14 |    .03   .17 |  .47 -1.1   .46 -1.1 | 1.56 |   .84   .78 | 5 Detroit           |
+|    59       7      8.43   8.66 |   -.42   .17 |  .81  -.2   .80  -.2 | 1.19 |   .85   .87 | 6 Saint Louis       |
+|    56       7      8.00   8.27 |   -.50   .17 |  .30 -1.6   .29 -1.7 | 1.74 |   .95   .89 | 7 Washington        |
+|    51       7      7.29   7.63 |   -.61   .17 |  .30 -1.7   .31 -1.6 | 1.69 |   .95   .91 | 8 Chicago           |
+|--------------------------------+--------------+----------------------+------+-------------+---------------------|
+|    76.9     7.0   10.98  11.00 |    .00   .17 |  .50 -1.1   .50 -1.1 |      |   .90       | Mean (Count: 8)     |
+|    17.8      .0    2.55   2.33 |    .42   .00 |  .20   .6   .20   .6 |      |   .04       | S.D. (Population)   |
+|    19.1      .0    2.72   2.49 |    .45   .00 |  .21   .6   .21   .6 |      |   .04       | S.D. (Sample)       |
++-----------------------------------------------------------------------------------------------------------------+
+Model, Populn: RMSE .17  Adj (True) S.D. .39  Separation 2.29  Strata 3.38  Reliability .84
+Model, Sample: RMSE .17  Adj (True) S.D. .42  Separation 2.47  Strata 3.63  Reliability .86
+Model, Fixed (all same) chi-squared: 48.8  d.f.: 7  significance (probability): .00
+Model,  Random (normal) chi-squared: 6.1  d.f.: 6  significance (probability): .41
+-------------------------------------------------------------------------------------------------------------------
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 7.1.2  Teams Measurement Report  (arranged by N).
+
++-----------------------------------------------------------------------------------------------------------------+
+|  Weightd Weightd Obsvd  Fair(M)|   +    Model | Infit      Outfit    |Estim.| Correlation |                     |
+|  Score   Count  Average Average|Measure  S.E. | MnSq ZStd  MnSq ZStd |Discrm| PtMea PtExp | N Teams             |
+|--------------------------------+--------------+----------------------+------+-------------+---------------------|
+|    97       7     13.86  13.65 |    .47   .17 |  .46 -1.1   .44 -1.1 | 1.55 |   .90   .88 | 1 Cleveland         |
+|    96       7     13.71  13.52 |    .45   .17 |  .50  -.9   .51  -.9 | 1.47 |   .88   .87 | 2 Boston            |
+|    94       7     13.43  13.24 |    .41   .17 |  .34 -1.5   .32 -1.6 | 1.72 |   .94   .86 | 3 New York          |
+|    84       7     12.00  11.93 |    .17   .17 |  .84  -.1   .84  -.1 | 1.17 |   .88   .80 | 4 Philadelphia      |
+|    78       7     11.14  11.14 |    .03   .17 |  .47 -1.1   .46 -1.1 | 1.56 |   .84   .78 | 5 Detroit           |
+|    59       7      8.43   8.66 |   -.42   .17 |  .81  -.2   .80  -.2 | 1.19 |   .85   .87 | 6 Saint Louis       |
+|    56       7      8.00   8.27 |   -.50   .17 |  .30 -1.6   .29 -1.7 | 1.74 |   .95   .89 | 7 Washington        |
+|    51       7      7.29   7.63 |   -.61   .17 |  .30 -1.7   .31 -1.6 | 1.69 |   .95   .91 | 8 Chicago           |
+|--------------------------------+--------------+----------------------+------+-------------+---------------------|
+|    76.9     7.0   10.98  11.00 |    .00   .17 |  .50 -1.1   .50 -1.1 |      |   .90       | Mean (Count: 8)     |
+|    17.8      .0    2.55   2.33 |    .42   .00 |  .20   .6   .20   .6 |      |   .04       | S.D. (Population)   |
+|    19.1      .0    2.72   2.49 |    .45   .00 |  .21   .6   .21   .6 |      |   .04       | S.D. (Sample)       |
++-----------------------------------------------------------------------------------------------------------------+
+Model, Populn: RMSE .17  Adj (True) S.D. .39  Separation 2.29  Strata 3.38  Reliability .84
+Model, Sample: RMSE .17  Adj (True) S.D. .42  Separation 2.47  Strata 3.63  Reliability .86
+Model, Fixed (all same) chi-squared: 48.8  d.f.: 7  significance (probability): .00
+Model,  Random (normal) chi-squared: 6.1  d.f.: 6  significance (probability): .41
+-------------------------------------------------------------------------------------------------------------------
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 7.2.1  Games played Measurement Report  (arranged by mN).
+
++-----------------------------------------------------------------------------------------------------------------+
+|  Weightd Weightd Obsvd  Fair(M)|   -    Model | Infit      Outfit    |Estim.| Correlation |                     |
+|  Score   Count  Average Average|Measure  S.E. | MnSq ZStd  MnSq ZStd |Discrm| PtMea PtExp | Nu Games played     |
+|--------------------------------+--------------+----------------------+------+-------------+---------------------|
+|    21       2     10.50  10.50 A    .00   .31 |  .29  -.7   .29  -.7 | 1.75 |  1.00  1.00 | 21 21 games         |
+|   275      25     11.00  11.00 A    .00   .09 |  .55 -1.8   .53 -1.9 | 1.47 |   .90   .85 | 22 22 games         |
+|    11.5     1     11.50  11.50 A    .00   .42 |  .02 -1.0   .02 -1.0 | 2.00 |  1.00  1.00 | 23 23 games         |
+|--------------------------------+--------------+----------------------+------+-------------+---------------------|
+|   102.5     9.3   11.00  11.00 |    .00   .27 |  .29 -1.2   .28 -1.3 |      |   .97       | Mean (Count: 3)     |
+|   122.0    11.1     .41    .41 |    .00   .14 |  .21   .5   .21   .5 |      |   .05       | S.D. (Population)   |
+|   149.5    13.6     .50    .50 |    .00   .17 |  .26   .6   .26   .6 |      |   .06       | S.D. (Sample)       |
++-----------------------------------------------------------------------------------------------------------------+
+Model, Populn: RMSE .30  Adj (True) S.D. .00  Separation .00  Strata .33  Reliability .00
+Model, Sample: RMSE .30  Adj (True) S.D. .00  Separation .00  Strata .33  Reliability .00
+Model, Fixed (all same) chi-squared: .0  d.f.: 2  significance (probability): 1.00
+-------------------------------------------------------------------------------------------------------------------
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 7.2.2  Games played Measurement Report  (arranged by N).
+
++-----------------------------------------------------------------------------------------------------------------+
+|  Weightd Weightd Obsvd  Fair(M)|   -    Model | Infit      Outfit    |Estim.| Correlation |                     |
+|  Score   Count  Average Average|Measure  S.E. | MnSq ZStd  MnSq ZStd |Discrm| PtMea PtExp | Nu Games played     |
+|--------------------------------+--------------+----------------------+------+-------------+---------------------|
+|    21       2     10.50  10.50 A    .00   .31 |  .29  -.7   .29  -.7 | 1.75 |  1.00  1.00 | 21 21 games         |
+|   275      25     11.00  11.00 A    .00   .09 |  .55 -1.8   .53 -1.9 | 1.47 |   .90   .85 | 22 22 games         |
+|    11.5     1     11.50  11.50 A    .00   .42 |  .02 -1.0   .02 -1.0 | 2.00 |  1.00  1.00 | 23 23 games         |
+|--------------------------------+--------------+----------------------+------+-------------+---------------------|
+|   102.5     9.3   11.00  11.00 |    .00   .27 |  .29 -1.2   .28 -1.3 |      |   .97       | Mean (Count: 3)     |
+|   122.0    11.1     .41    .41 |    .00   .14 |  .21   .5   .21   .5 |      |   .05       | S.D. (Population)   |
+|   149.5    13.6     .50    .50 |    .00   .17 |  .26   .6   .26   .6 |      |   .06       | S.D. (Sample)       |
++-----------------------------------------------------------------------------------------------------------------+
+Model, Populn: RMSE .30  Adj (True) S.D. .00  Separation .00  Strata .33  Reliability .00
+Model, Sample: RMSE .30  Adj (True) S.D. .00  Separation .00  Strata .33  Reliability .00
+Model, Fixed (all same) chi-squared: .0  d.f.: 2  significance (probability): 1.00
+-------------------------------------------------------------------------------------------------------------------
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 8.1  Category Statistics.
+
+ Model = 21,?,-?,B21  ; Games played: 21 games
++-------------------------------------------------------------+
+|           DATA                 |   QUALITY CONTROL | ANDRICH|
+|      Category Counts       Cum.|  Avge  Exp. OUTFIT| Thresh.|
+|Score Total      Used    %    % |  Meas  Meas  MnSq | Measure|
+|--------------------------------+-------------------+--------|
+|  8     1.0        .5   25%  25%|  -.19   -.06  1.1 |   -.56 |
+|  9     1.0        .5   25%  50%|  -.12   -.04   .6 |   -.37 |
+| 10      .0        .0    0%  50%|                   |   -.18 |
+| 11      .0        .0    0%  50%|                   |    .00 |
+| 12     1.0        .5   25%  75%|   .12    .04   .6 |    .18 |
+| 13     1.0        .5   25% 100%|   .19    .06  1.1 |    .37 |
++-------------------------------------------------------------+
+Binomial trials discrimination:  1.00 Anchored
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 8.2  Category Statistics.
+
+ Model = 22,?,-?,B22  ; Games played: 22 games
++---------------------------------------------------------------------------------+
+|           DATA                 |   QUALITY CONTROL | ANDRICH| Obsd-Expd  Andrich|
+|      Category Counts       Cum.|  Avge  Exp. OUTFIT| Thresh.|Diagnostic  Thresh.|
+|Score Total      Used    %    % |  Meas  Meas  MnSq | Measure| Residual   Displac|
+|--------------------------------+-------------------+--------+-------------------|
+|  4     1.0        .5    2%   2%|  -.59   -.86  1.2 |  -1.56 |                   |
+|  5     1.0        .5    2%   4%|  -.91*  -.81   .2 |  -1.28 |      -.7          |
+|  6     7.0       3.5   14%  18%|  -.79   -.73  1.6 |  -1.04 |      2.0          |
+|  7     3.0       1.5    6%  24%|  -.75   -.63   .3 |   -.83 |                   |
+|  8     5.0       2.5   10%  34%|  -.66   -.50  1.2 |   -.63 |       .6          |
+|  9     2.0       1.0    4%  38%|  -.42   -.35   .0 |   -.44 |      -.9          |
+| 10     5.0       2.5   10%  48%|  -.05   -.18   .4 |   -.26 |       .6          |
+| 11     2.0       1.0    4%  52%|   .00    .00   .6 |   -.09 |      -.9          |
+| 12     5.0       2.5   10%  62%|   .05    .18   .4 |    .09 |       .6          |
+| 13     2.0       1.0    4%  66%|   .42    .35   .0 |    .26 |      -.9          |
+| 14     5.0       2.5   10%  76%|   .66    .50  1.2 |    .44 |       .6          |
+| 15     3.0       1.5    6%  82%|   .75    .63   .3 |    .63 |                   |
+| 16     7.0       3.5   14%  96%|   .79    .73  1.6 |    .83 |      2.0          |
+| 17     1.0        .5    2%  98%|   .91    .81   .2 |   1.04 |      -.7          |
+| 18     1.0        .5    2% 100%|   .59*   .86  1.2 |   1.28 |                   |
++---------------------------------------------------------------------------------+
+Binomial trials discrimination:  1.00 Anchored
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 8.3  Category Statistics.
+
+ Model = 23,?,-?,B23  ; Games played: 23 games
++-------------------------------------------------------------+
+|           DATA                 |   QUALITY CONTROL | ANDRICH|
+|      Category Counts       Cum.|  Avge  Exp. OUTFIT| Thresh.|
+|Score Total      Used    %    % |  Meas  Meas  MnSq | Measure|
+|--------------------------------+-------------------+--------|
+| 11     1.0        .5   50%  50%|  -.02    .00  1.5 |   -.17 |
+| 12     1.0        .5   50% 100%|   .02    .00  1.5 |    .00 |
++-------------------------------------------------------------+
+Binomial trials discrimination:  1.00 Anchored
+
+American League Baseball 1948 (Mosteller, F., 1951, Psychometrika, 16/2, 207-218) 28/6/24, 10:18 am
+Table 4.1 Unexpected Responses (0 residuals sorted by u).
+
++-------------------------------------------------------------------------+
+| Cat  Score  Exp.  Resd StRes| Nu Games pl N Teams        N Teams        | Sequence
+|-----------------------------+-------------------------------------------|
+| *** No unexpected observation with StRes >= 2                           |
++-------------------------------------------------------------------------+

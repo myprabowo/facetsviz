@@ -1,0 +1,8 @@
+^cran-comments\.md$
+^README\.Rmd$
+^_pkgdown\.yml$
+^facetsviz\.Rproj$
+^docs$
+^data-raw$
+^\.gitignore$
+^Icon$

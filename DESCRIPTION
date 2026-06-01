@@ -1,0 +1,33 @@
+Package: facetsviz
+Type: Package
+Title: Parse and Visualize FACETS Output Files
+Version: 0.1.0
+Authors@R:
+    person(given = c("Muhammad", "Yoga"), family = "Prabowo", email = "muhammadyogaprabowo@gmail.com", role = c("aut", "cre"))
+Author: Muhammad Yoga Prabowo [aut, cre]
+Maintainer: Muhammad Yoga Prabowo <muhammadyogaprabowo@gmail.com>
+Description: Utilities to parse FACETS output files and build accurate
+    visualizations from multi-facet Rasch measurement reports.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends:
+    R (>= 4.1.0)
+Imports:
+    ggrepel,
+    ggplot2,
+    rlang,
+    scales,
+    stats,
+    tibble,
+    tidyr,
+    tools,
+    utils
+Suggests:
+    bslib,
+    knitr,
+    rmarkdown,
+    shiny,
+    testthat
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+RoxygenNote: 7.3.3

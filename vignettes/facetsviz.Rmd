@@ -1,0 +1,28 @@
+---
+title: "Using facetsviz"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using facetsviz}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+`facetsviz` reads FACETS `.out` files and returns a parsed `facets_out` object.
+
+```{r eval = FALSE}
+library(facetsviz)
+
+facets <- read_facets_out("peerAssessment.out")
+names(facets$measurement_reports)
+plot_wright_map(facets)
+```
+
+For batch rendering:
+
+```{r eval = FALSE}
+render_facets_plots(facets, output_dir = "figures", formats = c("png", "tiff"))
+```
