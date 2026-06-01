@@ -32,6 +32,29 @@ shiny_available_table_choices <- function(...) {
   get("available_table_choices", mode = "function", inherits = TRUE)(...)
 }
 
+references_html <- function() {
+  "
+<div class=\"facetsviz-references\" style=\"padding: 15px; margin-top: 10px; background-color: #f8f9fa; border-radius: 5px; font-size: 0.95em;\">
+  <ul style=\"line-height: 1.6; margin-bottom: 0; padding-left: 20px;\">
+    <li style=\"margin-bottom: 8px;\">Aryadoust, V., Ng, L. Y., & Sayama, H. (2020). A comprehensive review of Rasch measurement in language assessment: Recommendations and guidelines for research. <i>Language Testing</i>, <i>38</i>(1), 6–40. <a href=\"https://doi.org/10.1177/0265532220927487\" target=\"_blank\">https://doi.org/10.1177/0265532220927487</a></li>
+    <li style=\"margin-bottom: 8px;\">Bond, T. G., & Fox, C. M. (2015). <i>Applying the Rasch model: Fundamental measurement in the human sciences</i> (3rd ed.). Routledge.</li>
+    <li style=\"margin-bottom: 8px;\">Bonk, W. J., & Ockey, G. J. (2003). A many-facet Rasch analysis of the second language group oral discussion task. <i>Language Testing</i>, <i>20</i>(1), 89–110. <a href=\"https://doi.org/10.1191/0265532203lt245oa\" target=\"_blank\">https://doi.org/10.1191/0265532203lt245oa</a></li>
+    <li style=\"margin-bottom: 8px;\">Eckes, T. (2005). Examining rater effects in TestDaF writing and speaking performance assessments: A many-facet Rasch analysis. <i>Language Assessment Quarterly</i>, <i>2</i>(3), 197–221. <a href=\"https://doi.org/10.1207/s15434311laq0203_2\" target=\"_blank\">https://doi.org/10.1207/s15434311laq0203_2</a></li>
+    <li style=\"margin-bottom: 8px;\">Engelhard, G. (1992). The measurement of writing ability with a many-faceted Rasch model. <i>Applied Measurement in Education</i>, <i>5</i>(3), 171–191. <a href=\"https://doi.org/10.1207/s15324818ame0503_1\" target=\"_blank\">https://doi.org/10.1207/s15324818ame0503_1</a></li>
+    <li style=\"margin-bottom: 8px;\">Erguvan, I. D., & Aksu Dunya, B. (2020). Analyzing rater severity in a freshman composition course using many facet Rasch measurement. <i>Language Testing in Asia</i>, <i>10</i>, 1. <a href=\"https://doi.org/10.1186/s40468-020-00100-3\" target=\"_blank\">https://doi.org/10.1186/s40468-020-00100-3</a></li>
+    <li style=\"margin-bottom: 8px;\">Leckie, G., & Baird, J.-A. (2011). Rater effects on essay scoring: A multilevel analysis of severity, consistency, and the characteristic of raters and the tasks being marked. <i>Journal of Educational Measurement</i>, <i>48</i>(4), 399–418. <a href=\"https://doi.org/10.1111/j.1745-3984.2011.00152.x\" target=\"_blank\">https://doi.org/10.1111/j.1745-3984.2011.00152.x</a></li>
+    <li style=\"margin-bottom: 8px;\">Li, W. (2022). Scoring rubric reliability and internal validity in rater-mediated EFL writing assessment: Insights from many-facet Rasch measurement. <i>Reading and Writing</i>, <i>35</i>(10), 2409–2431. <a href=\"https://doi.org/10.1007/s11145-022-10279-1\" target=\"_blank\">https://doi.org/10.1007/s11145-022-10279-1</a></li>
+    <li style=\"margin-bottom: 8px;\">Linacre, J. M. (1994). <i>Many-facet Rasch measurement</i> (2nd ed.). MESA Press.</li>
+    <li style=\"margin-bottom: 8px;\">Linacre, J. M. (2002). Optimizing rating scale category effectiveness. <i>Journal of Applied Measurement</i>, <i>3</i>(1), 85–106.</li>
+    <li style=\"margin-bottom: 8px;\">Linacre, J. M. (2024). <i>Facets (Version 4.1.8)</i> [Computer software]. Winsteps.com. <a href=\"https://www.winsteps.com/facets.htm\" target=\"_blank\">https://www.winsteps.com/facets.htm</a></li>
+    <li style=\"margin-bottom: 8px;\">Lumley, T., & McNamara, T. F. (1995). Rater characteristics and rater bias: Implications for training. <i>Language Testing</i>, <i>12</i>(1), 54–71. <a href=\"https://doi.org/10.1177/026553229501200104\" target=\"_blank\">https://doi.org/10.1177/026553229501200104</a></li>
+    <li style=\"margin-bottom: 8px;\">Lunz, M. E., & Stahl, J. A. (1993). The effect of rater severity on person ability measure: A Rasch model analysis. <i>American Journal of Occupational Therapy</i>, <i>47</i>(4), 311–317. <a href=\"https://doi.org/10.5014/ajot.47.4.311\" target=\"_blank\">https://doi.org/10.5014/ajot.47.4.311</a></li>
+    <li style=\"margin-bottom: 8px;\">Schaefer, E. (2008). Rater bias patterns in an EFL writing assessment. <i>Language Testing</i>, <i>25</i>(4), 465–493. <a href=\"https://doi.org/10.1177/0265532208094273\" target=\"_blank\">https://doi.org/10.1177/0265532208094273</a></li>
+  </ul>
+</div>
+"
+}
+
 table_choices <- function() {
   c(
     "Measurement report 1" = "measurement_1",
@@ -216,6 +239,10 @@ build_facets_app <- function() {
             "About",
             shiny::tags$p("Upload a FACETS .out file to inspect parsed tables and render the main diagnostics used by facetsviz."),
             shiny::tags$p("To publish online, deploy this repository root or any directory that contains app.R together with the facetsviz folder.")
+          ),
+          shiny::tabPanel(
+            "References",
+            shiny::HTML(references_html())
           )
         )
       )
