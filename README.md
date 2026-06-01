@@ -27,8 +27,8 @@ plot_wright(facets)
 # Install from local source
 install.packages("facetsviz_0.1.0.tar.gz", repos = NULL, type = "source")
 
-# Or using devtools if published on GitHub
-# devtools::install_github("username/facetsviz")
+# Or using devtools from GitHub
+devtools::install_github("myprabowo/facetsviz")
 ```
 
 ## Usage
