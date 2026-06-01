@@ -199,6 +199,8 @@ build_facets_app <- function() {
         shiny::HTML(paste0(
           ".facetsviz-download { margin-bottom: 10px; }",
           ".facetsviz-download > .btn { display: block; width: 100%; }",
+          ".btn-file { background-color: #2c3e50 !important; background-color: var(--bs-primary) !important; color: white !important; color: var(--bs-primary-inverse, white) !important; border-color: #2c3e50 !important; border-color: var(--bs-primary) !important; }",
+          ".btn-file:hover { filter: brightness(85%); }",
           ".facetsviz-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #dee2e6; }",
           ".facetsviz-header img { height: 54px; width: auto; }",
           ".facetsviz-header h2 { margin: 0; font-size: 1.6rem; font-weight: 600; color: #1a2e4a; }",
@@ -236,13 +238,36 @@ build_facets_app <- function() {
           ),
           shiny::tabPanel("Data", DT::DTOutput("table_preview")),
           shiny::tabPanel(
-            "About",
-            shiny::tags$p("Upload a FACETS .out file to inspect parsed tables and render the main diagnostics used by facetsviz."),
-            shiny::tags$p("To publish online, deploy this repository root or any directory that contains app.R together with the facetsviz folder.")
-          ),
-          shiny::tabPanel(
             "References",
             shiny::HTML(references_html())
+          ),
+          shiny::tabPanel(
+            "About",
+            shiny::div(
+              style = "max-width: 700px; margin: 40px auto; text-align: center; color: #333;",
+              shiny::div(
+                style = "display: flex; justify-content: center; align-items: center; gap: 30px; margin-bottom: 30px;",
+                if (nzchar(logo_src)) shiny::tags$img(src = logo_src, alt = "facetsviz logo", style = "height: 140px;") else NULL,
+                shiny::div(
+                  style = "text-align: left;",
+                  shiny::tags$h1("facetsviz", style = "font-weight: bold; margin-top: 0; margin-bottom: 5px; font-size: 3rem;"),
+                  shiny::tags$h3("Version 0.1.0", style = "color: #666; margin-top: 0; margin-bottom: 10px; font-weight: normal;"),
+                  shiny::tags$p("\u00A9 2026 Muhammad Yoga Prabowo", style = "font-size: 1.2rem; margin-bottom: 0;")
+                )
+              ),
+              shiny::tags$p(
+                style = "font-size: 1.05rem; margin-bottom: 25px;",
+                "Built with ", shiny::tags$strong("R, Shiny, ggplot2, & DT"), ".", shiny::tags$br(),
+                "For bug reports and feature requests, please visit the ",
+                shiny::tags$a(href = "https://github.com/myprabowo/facetsviz", target = "_blank", "GitHub Repository"), "."
+              ),
+              shiny::tags$p(
+                style = "font-size: 0.95rem; color: #555; line-height: 1.6;",
+                "facetsviz is an R package for parsing FACETS .out files and producing reusable diagnostic visualizations from multi-facet Rasch measurement output.", shiny::tags$br(), shiny::tags$br(),
+                "Unless you have received this program directly pursuant to the terms of a commercial license agreement, this program is licensed to you under the ", shiny::tags$a(href = "https://github.com/myprabowo/facetsviz/blob/main/LICENSE", target = "_blank", "MIT License"), ".", shiny::tags$br(),
+                "See the ", shiny::tags$a(href = "https://github.com/myprabowo/facetsviz/blob/main/README.md", target = "_blank", "README"), " for permitted uses and guidelines."
+              )
+            )
           )
         )
       )
@@ -318,7 +343,7 @@ build_facets_app <- function() {
       )
 
       current_table()
-    }, options = list(pageLength = 20, lengthMenu = c(5, 10, 20, 50, 100)), rownames = FALSE)
+    }, options = list(pageLength = 20, lengthMenu = c(5, 10, 20, 50, 100), scrollX = TRUE, scrollY = "600px"), rownames = FALSE)
 
     output$download_plot <- shiny::downloadHandler(
       filename = function() paste0(input$plot_name, ".png"),
