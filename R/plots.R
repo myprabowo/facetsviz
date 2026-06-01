@@ -494,7 +494,7 @@ plot_distribution <- function(x, facet_index = 2L, binwidth = 0.75) {
       hjust = 1,
       vjust = 1,
       fill = "white",
-      label.size = 0.2,
+      linewidth = 0.2,
       color = "#B35C34",
       size = 3.3
     ) +
@@ -640,7 +640,7 @@ plot_ogive <- function(x, theta = NULL) {
       vjust = 0,
       fill = "#FFFFFF",
       alpha = 1,
-      label.size = 0.3,
+      linewidth = 0.3,
       color = "#707070",
       size = 2.7
     ) +
@@ -856,8 +856,8 @@ plot_wright <- function(x) {
       size = 2.7,
       color = "#707070"
     ) +
-    ggplot2::annotate("label", x = length(shown_names) + 0.34, y = Inf, label = labeled_facet, vjust = 1.6, fill = "white", label.size = 0.2, color = facet_palette[[length(facet_palette)]], fontface = "bold", size = 3) +
-    ggplot2::annotate("label", x = length(shown_names) + 0.86, y = Inf, label = "Thresholds", vjust = 1.6, fill = "white", label.size = 0.2, color = "#707070", fontface = "bold", size = 3) +
+    ggplot2::annotate("label", x = length(shown_names) + 0.34, y = Inf, label = labeled_facet, vjust = 1.6, fill = "white", linewidth = 0.2, color = facet_palette[[length(facet_palette)]], fontface = "bold", size = 3) +
+    ggplot2::annotate("label", x = length(shown_names) + 0.86, y = Inf, label = "Thresholds", vjust = 1.6, fill = "white", linewidth = 0.2, color = "#707070", fontface = "bold", size = 3) +
     ggplot2::scale_color_manual(values = facet_palette, name = "Facet") +
     ggplot2::scale_shape_manual(values = c(`FALSE` = 16, `TRUE` = 1), labels = c(`FALSE` = "Estimated", `TRUE` = "Extreme"), name = "Status") +
     ggplot2::scale_x_continuous(breaks = seq_along(shown_names), labels = shown_names, limits = c(0.65, length(shown_names) + 1.12), expand = ggplot2::expansion(mult = c(0.01, 0.01))) +

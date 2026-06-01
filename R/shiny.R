@@ -142,6 +142,10 @@ selected_table <- function(facets, table_name) {
 
   switch(
     table_name,
+    criteria = {
+      reports <- shiny_measurement_reports_list(facets)
+      if (length(reports) >= 3) reports[[3]] else stop("No third measurement report available.", call. = FALSE)
+    },
     categories = facets$categories,
     unexpected = facets$unexpected,
     stop("Unknown table name: ", table_name, call. = FALSE)
@@ -170,7 +174,7 @@ build_facets_app <- function() {
     shiny::titlePanel("facetsviz: FACETS Output Explorer"),
     shiny::sidebarLayout(
       shiny::sidebarPanel(
-        shiny::fileInput("out_file", "Upload FACETS .out file", accept = ".out"),
+        shiny::fileInput("out_file", "Upload FACETS output file (.out or .txt)", accept = c(".out", ".txt")),
         shiny::selectInput("plot_name", "Plot", choices = plot_choices()),
         shiny::numericInput("top_n_unexpected", "Unexpected responses to show", value = 20, min = 5, max = 100, step = 1),
         shiny::selectInput("table_name", "Table", choices = table_choices()),
