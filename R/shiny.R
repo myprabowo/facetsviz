@@ -195,18 +195,23 @@ build_facets_app <- function() {
       shiny::sidebarPanel(
         shiny::fileInput("out_file", "Upload FACETS output file (.out or .txt)", accept = c(".out", ".txt")),
         shiny::selectInput("plot_name", "Plot", choices = plot_choices()),
-        shiny::numericInput("top_n_unexpected", "Unexpected responses to show", value = 20, min = 5, max = 100, step = 1),
+        shiny::conditionalPanel(
+          condition = "input.plot_name == 'unexpected_responses'",
+          shiny::numericInput("top_n_unexpected", "Unexpected responses to show", value = 20, min = 5, max = 100, step = 1)
+        ),
         shiny::selectInput("table_name", "Table", choices = table_choices()),
-        shiny::numericInput("preview_rows", "Rows to preview", value = 20, min = 5, max = 200, step = 5),
-        shiny::div(class = "facetsviz-download", shiny::downloadButton("download_plot", "Download current plot")),
-        shiny::div(class = "facetsviz-download", shiny::downloadButton("download_all_plots", "Download all plots (ZIP)")),
-        shiny::div(class = "facetsviz-download", shiny::downloadButton("download_table", "Download selected table"))
+        shiny::div(class = "facetsviz-download", shiny::downloadButton("download_plot", "Download current plot", class = "btn-primary")),
+        shiny::div(class = "facetsviz-download", shiny::downloadButton("download_all_plots", "Download all plots (ZIP)", class = "btn-primary")),
+        shiny::div(class = "facetsviz-download", shiny::downloadButton("download_table", "Download selected table", class = "btn-primary"))
       ),
       shiny::mainPanel(
         shiny::tabsetPanel(
           shiny::tabPanel("Overview", shiny::tableOutput("overview")),
-          shiny::tabPanel("Plot", shiny::plotOutput("plot", height = "680px")),
-          shiny::tabPanel("Data", shiny::tableOutput("table_preview")),
+          shiny::tabPanel("Plot", 
+            shiny::h4(shiny::textOutput("plot_title"), style = "margin-top: 15px; margin-bottom: 10px; font-weight: bold;"),
+            shiny::plotOutput("plot", height = "680px")
+          ),
+          shiny::tabPanel("Data", DT::DTOutput("table_preview")),
           shiny::tabPanel(
             "About",
             shiny::tags$p("Upload a FACETS .out file to inspect parsed tables and render the main diagnostics used by facetsviz."),
@@ -256,6 +261,12 @@ build_facets_app <- function() {
       selected_plot(facets_data(), input$plot_name, top_n_unexpected = input$top_n_unexpected)
     })
 
+    output$plot_title <- shiny::renderText({
+      shiny::req(nzchar(input$plot_name))
+      options <- shiny_plot_choice_labels(facets_data())
+      names(options)[options == input$plot_name]
+    })
+
     current_table <- shiny::reactive({
       shiny::req(nzchar(input$table_name))
       selected_table(facets_data(), input$table_name)
@@ -274,13 +285,13 @@ build_facets_app <- function() {
       current_plot()
     }, res = 110)
 
-    output$table_preview <- shiny::renderTable({
+    output$table_preview <- DT::renderDT({
       shiny::validate(
         shiny::need(nzchar(input$table_name), "No table is available for this FACETS file.")
       )
 
-      utils::head(current_table(), input$preview_rows)
-    }, striped = TRUE, bordered = TRUE, spacing = "s", rownames = FALSE)
+      current_table()
+    }, options = list(pageLength = 20, lengthMenu = c(5, 10, 20, 50, 100)), rownames = FALSE)
 
     output$download_plot <- shiny::downloadHandler(
       filename = function() paste0(input$plot_name, ".png"),
