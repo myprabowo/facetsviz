@@ -162,10 +162,11 @@ build_facets_app <- function() {
     theme <- bslib::bs_theme(version = 5, bootswatch = "flatly")
   }
 
-  logo_path <- system.file("www", "logo.png", package = "facetsviz")
-  has_logo <- nzchar(logo_path) && file.exists(logo_path)
-  if (has_logo) {
-    shiny::addResourcePath("facetsviz_www", system.file("www", package = "facetsviz"))
+  www_dir <- system.file("www", package = "facetsviz")
+  logo_src <- if (nzchar(www_dir) && file.exists(file.path(www_dir, "logo.png"))) {
+    "facetsviz_www/logo.png"
+  } else {
+    ""
   }
 
   ui <- shiny::fluidPage(
@@ -182,18 +183,14 @@ build_facets_app <- function() {
         ))
       )
     ),
-    if (has_logo) {
-      shiny::div(
-        class = "facetsviz-header",
-        shiny::tags$img(src = "facetsviz_www/logo.png", alt = "facetsviz logo"),
-        shiny::tags$div(
-          shiny::tags$h2("facetsviz"),
-          shiny::tags$small("FACETS Output Explorer")
-        )
+    shiny::div(
+      class = "facetsviz-header",
+      if (nzchar(logo_src)) shiny::tags$img(src = logo_src, alt = "facetsviz logo") else NULL,
+      shiny::tags$div(
+        shiny::tags$h2("facetsviz"),
+        shiny::tags$small("FACETS Output Explorer")
       )
-    } else {
-      shiny::titlePanel("facetsviz: FACETS Output Explorer")
-    },
+    ),
     shiny::sidebarLayout(
       shiny::sidebarPanel(
         shiny::fileInput("out_file", "Upload FACETS output file (.out or .txt)", accept = c(".out", ".txt")),
@@ -345,6 +342,11 @@ build_facets_app <- function() {
 #'
 #' @return A shiny app object when `launch = FALSE`, otherwise the result of [shiny::runApp()].
 run_app <- function(launch = TRUE, host = "127.0.0.1", port = NULL) {
+  www_dir <- system.file("www", package = "facetsviz")
+  if (nzchar(www_dir)) {
+    shiny::addResourcePath("facetsviz_www", www_dir)
+  }
+
   app <- build_facets_app()
 
   if (!launch) {
